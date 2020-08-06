@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>在线代码运行工具</title>
+		<link rel="apple-touch-icon" href="//static.runoob.com/images/icon/mobile-icon.png"/>
+	</head>
+	<body>
+		<div class="article-heading">
+			<h2>在线代码运行工具</h2>
+		</div>
+		<script>
+			(function() {
+				window.onload = function() {
+					var e = "将HTML/CSS/Javascript代码粘在此处，点击运行即可。",
+					t = document.getElementById("codeinp"),
+					n = document.getElementById("btclear"),
+					r = document.getElementById("btrun");
+					t.onfocus = function() {
+						var n = t.value;
+						n == e && (t.value = "")
+					},
+					t.onblur = function() {
+						var n = t.value;
+						n == "" && (t.value = e)
+					},
+					n.onclick = function() {
+						t.value = "",
+						t.focus()
+					},
+					r.onclick = function() {
+						var n = t.value;
+						if (n != e) {
+							var r = window.open("", "", "");
+							r.opener = null,
+							r.document.write(n),
+							r.document.close()
+						} else alert("请将需要运行的HTML填写到输入框后再运行！", "alert", "运行提示")
+					}
+				}
+			})()
+		</script>
+		<style>
+		textarea {
+			width: 100%;
+			border: 0 none;
+			overflow: auto;
+			resize: none;
+			outline: none;
+		}
+		a {
+			color: #333;
+			text-decoration: none;
+			margin: 0;
+			padding: 0;
+			word-wrap: break-word;
+			font-family: verdana,Microsoft YaHei,Tahoma,sans-serif;
+		}
+		.content .textbox {
+			right:0;
+			left:0;
+			padding-left:5px;
+			border:1px #d1d1d1 solid;
+			
+			background: url(/images/inpbg.png) #fff no-repeat;
+			overflow:hidden;	
+		}
+		.content .textbox div textarea {
+			padding:5px 0;
+			width:100%;	
+		}
+		.content .btnbar {
+			float:right;
+		    padding-top: 12px;
+		}
+		.btns {
+			display:block;
+			margin-right:8px;
+			width:80px;
+			height:38px;
+			line-height:38px;
+			font-size:14px;
+			text-align:center;
+			border:1px #cacaca solid;
+			border-radius:2px;
+			background: url(/images/btn_bg.png) repeat-x;
+			float:left;
+			font-family: verdana,Microsoft YaHei,Tahoma,sans-serif;
+		}
+		.btns:hover {
+			border:1px #a4a4a4 solid;
+			background-color: #eee;
+			background-position:0 -40px;
+			text-decoration:none;
+		}
+		.btns:active {
+			background-position:0 -80px;
+		}
+		.btns.hilite {
+			color:white;
+			background-color:#62c462;
+			border:1px #62c462 solid;
+			background-position:0 -120px;
+		}
+		.btns.hilite:hover {
+			border:1px #57a957 solid;
+			background-color:#57a957;
+			background-position:0 -160px;
+		}
+		.btns.hilite:active {
+			background-position:0 -200px;
+		}
+		.content #code {
+		left: 130px;
+		right: 130px;
+		height: 440px;
+		}
+		.content #code textarea {
+			height:430px;
+		}
+		</style>
+		
+<br>
+
+<div class="content">
+	<div id="code" class="textbox">
+		<div><textarea id="codeinp">将HTML/CSS/Javascript代码粘在此处，点击运行即可。</textarea></div>
+	</div>
+	<div class="btnbar cl">
+		<a id="btclear" class="btns" href="javascript:void(0);" hidefocus="true">清空</a>
+		<a id="btrun" class="btns hilite" href="javascript:void(0);" hidefocus="true">运行</a>
+	</div>
+</div>				
+
+	</body>
+</html>

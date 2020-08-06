@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js" ></script>
+	<script>
+	    $(function(){
+	        /* 单机li进行页面跳转 */
+	        $("div li").click(function(){
+	            /*当前标签下的a标签*/
+	            var obj = $(this).children("a");
+	            /*获取第一个a标签，进行跳转*/
+	            window.location.href=$(obj[0]).attr("href");
+	        });
+	    })
+	</script>
+	<style>
+		body{
+			background-color: #fdfcf8;
+		}
+		.header{
+			display: flex;
+			flex-direction: row;
+			margin: 40px auto;
+			width: 90%;
+		}
+		.index,.bianji{
+			width:50% ;
+			background-color: #e8e7e3;
+			text-align: center;
+			font-size: 22px;
+			padding: 10px 0;	
+			list-style: none;
+		}
+		.index a,.bianji a{
+			text-decoration: none;
+			color: #565656;
+		}
+		.index{
+			border-right: 2px solid #838383;
+		}
+		.index:hover,.bianji:hover{
+			background-color: #3f3f3f;
+			cursor: pointer;
+		}
+		.index:hover a,.bianji:hover a{
+			color: white;
+		}
+		/*菜单列表*/
+		.list{
+			float: left;
+			margin-left: 5%;
+			background-color: #fdfcf8;
+			width: 14%;
+			border:1px solid #e8e7e3;
+		}
+		.list h2{
+			padding-left: 8px;
+			font-size:14px;
+			font-family: "微软雅黑";
+		}
+		.list li{
+			list-style: none;
+			font-size:13px;
+			font-family: "微软雅黑";	
+			margin-left: -40px;
+			padding: 4px 0 4px 15px;
+		}
+		.list ul{
+			margin-top: -5px;
+		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
+		.name{
+			color:  #565656;
+			font-size: 18px;
+			font-weight: 570;
+			text-align: center;
+			padding: 6px 0;
+			background-color:  #e8e7e3;
+		}
+		.list li:not(.select):hover{
+			background-color:#3f3f3f;
+			color: white;
+			cursor: pointer;
+		}
+		.select{
+			background-color: #f98a53;
+			color: white;
+		}
+		.select a{
+			color: white;
+		}
+		.list li:hover a{
+			color: white;
+		}
+		/*内容*/
+		.content{
+			margin-left: 20px;
+			width: 74%;
+			float:left;
+			font-size: 14px;
+			font-family: "微软雅黑";
+			margin-bottom: 60px;
+		}
+		.box{
+			font-family: Consolas;
+			border: 1px dotted #aeaeae;
+			background-color: #f5f5f5;
+			padding: 20px;
+		}
+	</style>
+	
+	<body>
+		<div class="header">
+			<li class="index"><a href="../index.html">返回首页</a></li>
+			<li class="bianji"><a href="editing-online.html">在线编辑</a></li>
+		</div>
+		<div class="list">
+			<div class="name">课程表</div>
+			<h2>CSS 基础教程</h2>
+			<ul>
+				<li><a href="class-css1.html">CSS 基础语法</a></li>
+				<li><a href="class-css2.html">CSS 高级语法</a></li>
+				<li class="select"><a href="class-css3.html">CSS 派生选择器</a></li>
+				<li><a href="">CSS id 选择器</a></li>
+				<li><a href="">CSS 类选择器</a></li>
+				<li><a href="">CSS 属性选择器</a></li>
+				<li><a href="">CSS 创建</a></li>
+			</ul>
+			<h2>CSS 样式</h2>
+			<ul>
+				<li>CSS 背景</li>
+				<li>CSS 文本</li>
+				<li>CSS 字体</li>
+				<li>CSS 链接</li>
+				<li>CSS 列表</li>
+				<li>CSS 表格</li>
+				<li>CSS 轮廓</li>
+			</ul>
+			<h2>CSS 框模型</h2>
+			<ul>
+				<li>CSS 内边距</li>
+				<li>CSS 边框</li>
+				<li>CSS 外边距</li>
+				<li>CSS 外边距合并</li>
+			</ul>
+			<h2>CSS 定位</h2>
+			<ul>
+				<li>CSS 相对定位</li>
+				<li>CSS 绝对定位</li>
+				<li>CSS 浮动</li>
+			</ul>
+			<h2>CSS 选择器</h2>
+			<ul>
+				<li>CSS 元素选择器</li>
+				<li>CSS 选择器分组</li>
+				<li>CSS 类选择器详解</li>
+				<li>CSS id 选择器详解</li>
+				<li>CSS 属性选择器详解</li>
+				<li>CSS 后代选择器</li>
+				<li>CSS 子元素选择器</li>
+				<li>CSS 相邻兄弟选择器</li>
+				<li>CSS 伪类</li>
+				<li>CSS 伪元素</li>
+			</ul>
+			<h2>CSS 高级</h2>
+			<ul>
+				<li>CSS 对齐</li>
+				<li>CSS 尺寸</li>
+				<li>CSS 分类</li>
+				<li>CSS 导航栏</li>
+				<li>CSS 图片库</li>
+				<li>CSS 图片透明</li>
+				<li>CSS 媒介类型</li>
+				<li>CSS 注意事项</li>
+				<li>CSS 总结</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h2>CSS 派生选择器</h2>
+			<hr />
+			<h3>派生选择器</h3>
+			<h4>通过依据元素在其位置的上下文关系来定义样式，你可以使标记更加简洁。</h4>
+			<p>
+				在 CSS1 中，通过这种方式来应用规则的选择器被称为上下文选择器 (contextual selectors)，这是由于它们依赖于上下文关系来应用或者避免某项规则。在 CSS2 中，它们称为派生选择器，但是无论你如何称呼它们，它们的作用都是相同的。<br />
+
+<br/>派生选择器允许你根据文档的上下文关系来确定某个标签的样式。通过合理地使用派生选择器，我们可以使 HTML 代码变得更加整洁。<br />
+
+<br/>比方说，你希望列表中的 strong 元素变为斜体字，而不是通常的粗体字，可以这样定义一个派生选择器：
+			</p>
+			<div class="box">
+				li strong {<br />
+    font-style: italic;<br />
+    font-weight: normal;<br />
+  }
+			</div>
+			<p><xmp>请注意标记为<strong>的蓝色代码的上下文关系：</xmp></p>
+			<div class="box">
+				<xmp><p><strong>我是粗体字，不是斜体字，因为我不在列表当中，所以这个规则对我不起作用</strong></p><br />
+
+<ol><br />
+<li><strong>我是斜体字。这是因为 strong 元素位于 li 元素内。</strong></li><br />
+<li>我是正常的字体。</li><br />
+</ol>
+			</xmp></div>
+			<p>在上面的例子中，只有 li 元素中的 strong 元素的样式为斜体字，无需为 strong 元素定义特别的 class 或 id，代码更加简洁。
+
+再看看下面的 CSS 规则：</p>
+			<div class="box">
+				strong {<br />
+     color: red;<br />
+     }<br />
+
+h2 {<br />
+     color: red;<br />
+     }<br />
+
+h2 strong {<br />
+     color: blue;<br />
+     }
+			</div>
+			<p>下面是它施加影响的 HTML：</p>
+			<div class="box">
+				<xmp><p>The strongly emphasized word in this paragraph is<strong>red</strong>.</p><br />
+<h2>This subhead is also red.</h2><br />
+<h2>The strongly emphasized word in this subhead is<strong>blue</strong>.</h2>
+			</xmp></div>
+		</div>
+	</body>
+</html>

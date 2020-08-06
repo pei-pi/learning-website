@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>提交作业</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js" ></script>
+    <SCRIPT type="text/javascript">
+     function check(){
+        if(myform.tit.value==""){
+             alert("标题不能为空！");
+             return false;
+            }
+        if(myform.file.value==""){
+             alert("请上传图片！");
+             return false;
+            }
+        if(myform.cont.value==""){
+             alert("内容不能为空！");
+             return false;
+            }
+         return true;
+        }
+    </SCRIPT>
+    <style>
+    	.user-center{
+    		width: 40%;
+    		height: 500px;
+    		display: flex;
+    		flex-direction: row;
+    		margin: auto;
+    	}
+    	.left{
+            background:url("../images/bg.jpg")0px 0px no-repeat;
+            left: -120px;
+            position: relative;
+            /*border:1px solid #f98a53;*/
+        }
+        
+        .left li{
+            text-align: center;
+            padding:20px 30px;
+            /*border-bottom: 1px solid white;*/
+            color: white;
+            cursor: pointer;
+        }
+        .left li a{
+            color: white;
+        }
+        .left li:not(.select):hover{
+            cursor: pointer;
+            background-color:#f9671e;
+        }
+        .center{
+             border-left:1px solid white;
+    		position: absolute;
+    		height: 500px;
+    		width: 40%;
+    		background:url("../images/bg.jpg")0px 0px no-repeat;
+    	}
+    	.select{
+    		background-color: black;
+    	}
+        .modal-body{
+            margin-top: 80px;
+            margin-left: 70px;
+        }
+        .form-control {
+            display: block;
+            width: 80%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            overflow: visible;
+        }
+        .btn:not(:disabled):not(.disabled) {
+            cursor: pointer;
+        }
+        .btn-success {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        label{
+            line-height: 40px;
+            color: white;
+            font-size: 1.1em;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>提交作业</h1>
+    <div class="user-center">
+    	<div class="left" id="left">
+    		<ul class="list" id="list">
+	    		<li><a href="../index.html">首页</a></li>	
+				<li><a href="user-center.html">个人中心</a></li>
+				<li class="select"><a href="submit.html" style="display: block;">提交作业</a></li>
+				<li><a href="change-mm.html" style="display: block;">修改密码</a></li>
+				<li><a href="#" style="display: block;">安全退出</a></li>
+			</ul>
+    	</div>
+    	<div class="center">
+    		<div class="modal-body">
+                <form name="myform" action="upload_file.php" method="post" enctype="multipart/form-data"  onSubmit="return check();">
+                <label  for="file">标题：</label>
+                <input name=tit style="width:280px;"  type="text" class="form-control" placeholder="请输入标题"><br/>
+                <label for="file">上传文件</label>
+                <input class="btn btn-default" type="file" name="file" id="file"><br/>
+                <label for="file">内容：</label>
+                <textarea name="cont" class="form-control" rows="3"></textarea><br/>
+                <input  class="btn btn-success" type="submit" name="submit" value="提交作业"  >
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+   /* $("#left").hover(function(){
+    	$(this).removeClass("left");
+    	$(this).addClass("left-after");
+    },function(){
+    	$(this).addClass("left");
+    	$(this).removeClass("left-after");
+    })*/
+    $(function(){
+        /* 单机li进行页面跳转 */
+        $("ul li").click(function(){
+            /*当前标签下的a标签*/
+            var obj = $(this).children("a");
+            /*获取第一个a标签，进行跳转*/
+            window.location.href=$(obj[0]).attr("href");
+        });
+    })
+</script>

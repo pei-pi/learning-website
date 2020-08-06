@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="../js/jquery-1.9.1.min.js" ></script>
+	<script>
+	    $(function(){
+	        /* 单机li进行页面跳转 */
+	        $("div li").click(function(){
+	            /*当前标签下的a标签*/
+	            var obj = $(this).children("a");
+	            /*获取第一个a标签，进行跳转*/
+	            window.location.href=$(obj[0]).attr("href");
+	        });
+	    })
+	</script>
+	<style>
+		body{
+			background-color: #fdfcf8;
+		}
+		.header{
+			display: flex;
+			flex-direction: row;
+			margin: 40px auto;
+			width: 90%;
+		}
+		.index,.bianji{
+			width:50% ;
+			background-color: #e8e7e3;
+			text-align: center;
+			font-size: 22px;
+			padding: 10px 0;	
+			list-style: none;
+		}
+		.index a,.bianji a{
+			text-decoration: none;
+			color: #565656;
+		}
+		.index{
+			border-right: 2px solid #838383;
+		}
+		.index:hover,.bianji:hover{
+			background-color: #3f3f3f;
+			cursor: pointer;
+		}
+		.index:hover a,.bianji:hover a{
+			color: white;
+		}
+		/*菜单列表*/
+		.list{
+			float: left;
+			margin-left: 5%;
+			background-color: #fdfcf8;
+			width: 14%;
+			border:1px solid #e8e7e3;
+		}
+		.list h2{
+			padding-left: 8px;
+			font-size:14px;
+			font-family: "微软雅黑";
+		}
+		.list li{
+			list-style: none;
+			font-size:13px;
+			font-family: "微软雅黑";	
+			margin-left: -40px;
+			padding: 4px 0 4px 15px;
+		}
+		.list ul{
+			margin-top: -5px;
+		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
+		.name{
+			color:  #565656;
+			font-size: 18px;
+			font-weight: 570;
+			text-align: center;
+			padding: 6px 0;
+			background-color:  #e8e7e3;
+		}
+		.list li:not(.select):hover{
+			background-color:#3f3f3f;
+			color: white;
+			cursor: pointer;
+		}
+		.select{
+			background-color: #f98a53;
+			color: white;
+		}
+		.select a{
+			color: white;
+		}
+		.list li:hover a{
+			color: white;
+		}
+		
+		/*内容*/
+		.content{
+			margin-left: 20px;
+			width: 74%;
+			float:left;
+			font-size: 14px;
+			font-family: "微软雅黑";
+			margin-bottom: 60px;
+		}
+		.box{
+			font-family: Consolas;
+			border: 1px dotted #aeaeae;
+			background-color: #f5f5f5;
+			padding: 20px;
+		}
+	</style>
+	
+	<body>
+		<div class="header">
+			<li class="index"><a href="../index.html">返回首页</a></li>
+			<li class="bianji"><a href="editing-online.html">在线编辑</a></li>
+		</div>
+		<div class="list">
+			<div class="name">课程表</div>
+			<h2>CSS 基础教程</h2>
+			<ul>
+				<li class="select"><a href="class-css1.html">CSS 基础语法</a></li>
+				<li><a href="class-css2.html">CSS 高级语法</a></li>
+				<li><a href="class-css3.html">CSS 派生选择器</a></li>
+				<li><a href="">CSS id 选择器</a></li>
+				<li><a href="">CSS 类选择器</a></li>
+				<li><a href="">CSS 属性选择器</a></li>
+				<li><a href="">CSS 创建</a></li>
+			</ul>
+			<h2>CSS 样式</h2>
+			<ul>
+				<li>CSS 背景</li>
+				<li>CSS 文本</li>
+				<li>CSS 字体</li>
+				<li>CSS 链接</li>
+				<li>CSS 列表</li>
+				<li>CSS 表格</li>
+				<li>CSS 轮廓</li>
+			</ul>
+			<h2>CSS 框模型</h2>
+			<ul>
+				<li>CSS 内边距</li>
+				<li>CSS 边框</li>
+				<li>CSS 外边距</li>
+				<li>CSS 外边距合并</li>
+			</ul>
+			<h2>CSS 定位</h2>
+			<ul>
+				<li>CSS 相对定位</li>
+				<li>CSS 绝对定位</li>
+				<li>CSS 浮动</li>
+			</ul>
+			<h2>CSS 选择器</h2>
+			<ul>
+				<li>CSS 元素选择器</li>
+				<li>CSS 选择器分组</li>
+				<li>CSS 类选择器详解</li>
+				<li>CSS id 选择器详解</li>
+				<li>CSS 属性选择器详解</li>
+				<li>CSS 后代选择器</li>
+				<li>CSS 子元素选择器</li>
+				<li>CSS 相邻兄弟选择器</li>
+				<li>CSS 伪类</li>
+				<li>CSS 伪元素</li>
+			</ul>
+			<h2>CSS 高级</h2>
+			<ul>
+				<li>CSS 对齐</li>
+				<li>CSS 尺寸</li>
+				<li>CSS 分类</li>
+				<li>CSS 导航栏</li>
+				<li>CSS 图片库</li>
+				<li>CSS 图片透明</li>
+				<li>CSS 媒介类型</li>
+				<li>CSS 注意事项</li>
+				<li>CSS 总结</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h2>基础语法</h2>
+			<hr />
+			<h3>CSS 语法</h3>
+			<p>CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明。</p>
+			<div class="box">selector {declaration1; declaration2; ... declarationN }</div>
+			<p>选择器通常是您需要改变样式的 HTML 元素。</p>
+			<p>每条声明由一个属性和一个值组成。</p>
+			<p>属性（property）是您希望设置的样式属性（style attribute）。每个属性有一个值。属性和值被冒号分开。</p>
+			<div class="box">selector {property: value}</div>
+			<p>下面这行代码的作用是将 h1 元素内的文字颜色定义为红色，同时将字体大小设置为 14 像素。</p>
+			<p>在这个例子中，h1 是选择器，color 和 font-size 是属性，red 和 14px 是值。</p>
+			<div class="box">h1 {color:red; font-size:14px;}</div>
+			<hr />
+			<h3>值的不同写法和单位</h3>
+			<p>除了英文单词 red，我们还可以使用十六进制的颜色值 #ff0000：</p>
+			<div class="box">p { color: #ff0000; }</div>
+			<p>为了节约字节，我们可以使用 CSS 的缩写形式：</p>
+			<div class="box">p { color: #f00; }</div>
+			<p>我们还可以通过两种方法使用 RGB 值：</p>
+			<div class="box">
+				p { color: rgb(255,0,0); }<br />
+                p { color: rgb(100%,0%,0%); }
+			</div>
+			<p>请注意，当使用 RGB 百分比时，即使当值为 0 时也要写百分比符号。但是在其他的情况下就不需要这么做了。比如说，当尺寸为 0 像素时，0 之后不需要使用 px 单位，因为 0 就是 0，无论单位是什么。</p>
+			<hr />
+			<h3>记得写引号</h3>
+			<p>如果值为若干单词，则要给值加引号：</p>
+			<div class="box">p {font-family: "sans serif";}</div>
+			<hr />
+			<h3>多重声明：</h3>
+			<p>如果要定义不止一个声明，则需要用分号将每个声明分开。下面的例子展示出如何定义一个红色文字的居中段落。最后一条规则是不需要加分号的，因为分号在英语中是一个分隔符号，不是结束符号。然而，大多数有经验的设计师会在每条声明的末尾都加上分号，这么做的好处是，当你从现有的规则中增减声明时，会尽可能地减少出错的可能性。就像这样：</p>
+			<div class="box">p {text-align:center; color:red;}	</div>
+			<p>你应该在每行只描述一个属性，这样可以增强样式定义的可读性，就像这样：</p>
+			<div class="box">
+				p {<br />
+  					text-align: center;<br />
+					  color: black;<br />
+					  font-family: arial;<br />
+					}
+			</div>
+			<hr />
+			<h3>空格和大小写</h3>
+			<p>大多数样式表包含不止一条规则，而大多数规则包含不止一个声明。多重声明和空格的使用使得样式表更容易被编辑：</p>
+			<div class="box">
+				body {<br />
+  color: #000;<br />
+  background: #fff;<br />
+  margin: 0;<br />
+  padding: 0;<br />
+  font-family: Georgia, Palatino, serif;<br />
+  }
+			</div>
+			<p>是否包含空格不会影响 CSS 在浏览器的工作效果，同样，与 XHTML 不同，CSS 对大小写不敏感。不过存在一个例外：如果涉及到与 HTML 文档一起工作的话，class 和 id 名称对大小写是敏感的。</p>
+		</div>
+	</body>
+</html>
